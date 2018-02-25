@@ -10,16 +10,16 @@ RSpec.describe Chapter, type: :model do
 
 
   it "should have title" do
-    chapter.title.should == "Git"
+    expect(chapter.title).to eql('Git')
   end
 
   it "should have book" do
-    chapter.book.should == book
+    expect(chapter.book).to eql(book)
   end
 
   it "should have sections" do
-    chapter.sections.any?.should be_truthy
-    chapter.sections.count.should == 3
+    expect(chapter.sections.any?).to be_truthy
+    expect(chapter.sections.count).to eql(3)
   end
 
 end
